@@ -39,6 +39,7 @@ let menu_list,menu_content
         <a href="about_me.html">About me</a>
         <a href="index.html#books">Books</a>
         <a href="contact.html">Contact me</a>
+        <a href="#" class="dark-mode-toggle">Darkmode</a>
     `
 
     menu_list = document.getElementById("menu_list")
@@ -66,3 +67,30 @@ let page_title,page_name
     page_name = document.getElementById("page_name")
 
     page_name.innerHTML = page_title
+
+
+//darkmode 
+const btn = document.querySelector('.dark-mode-toggle')
+const currentTheme = localStorage.getItem('theme')
+
+if (currentTheme === 'dark') 
+{
+    document.body.setAttribute('data-theme', 'dark')
+}
+
+btn.addEventListener('click', () => 
+{
+    let theme = 'light'
+
+    if (document.body.getAttribute('data-theme') !== 'dark') 
+    {
+        theme = 'dark'
+        btn.innerHTML = "Whitemode"
+    }else
+    {
+        btn.innerHTML = "Darkmode"
+    }
+    
+    document.body.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+})

@@ -17,11 +17,30 @@
 
     /* numbers */
     --br: 16px; /* border-radius */
+
+    --bg-body: var(--color-white);
+    --text-main: var(--color-black);
+}
+
+
+
+[data-theme="dark"] 
+{
+    --color-whitesmoke: #2a2a2a; 
+    --color-gray: #b0b0b0;       
+    --color-white: #121212;     
+    --color-black: #ffffff;      
+    --color-link-blue: #446b9e; 
+    
+    --bg-body: var(--color-white);
+    --text-main: var(--color-black);
 }
 
 body 
 {
     height: 100vh;
+    background-color: var(--bg-body);
+    color: var(--text-main);
 }
 
 .header
@@ -235,7 +254,7 @@ body.scrolled .sticky-header
     font-size: 25px;
     font-weight: 400;
     padding: 40px 0;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid var(--color-gray);
 }
 
 .books-shelf 
@@ -320,6 +339,7 @@ body.scrolled .sticky-header
     background-color: var(--color-whitesmoke);
     border: 1px solid var(--color-gray);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .book-options .book-option:nth-child(1)
@@ -503,14 +523,70 @@ body.scrolled .sticky-header
     height: 80px;
 }
 
+p
+{
+    width: 50%;
+    color: var(--color-gray);
+    padding: 10px;
+}
+
+.section-wiki 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+    width: 50%;
+    margin: 20px 0;
+}
+
+.section-wiki a 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--color-gray);
+    background-color: var(--color-whitesmoke);
+    color: var(--color-gray);
+    border-radius: var(--br);
+}
+
+.sec-w-one, .sec-w-two 
+{
+    height: 100px; 
+}
+
+.sec-w-three 
+{
+    grid-column: span 2; 
+    height: 50px;   
+    letter-spacing: 4px;    
+}
+
 @media screen and (max-width: 600px) {
     
+    .section-wiki 
+    {
+        width: 100%;
+    }
+
+    .sec-w-three
+    {
+        height: 80px;
+    }
+
+    p
+    {
+        width: 100%;
+    }
+
     .book-description
     {
         width: 100%;
     }
 
-    .book-options div , .chapter-con
+    .book-options a , .chapter-con
     {
         height: 80px;
     }
