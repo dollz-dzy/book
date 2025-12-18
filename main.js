@@ -58,3 +58,11 @@ let footer_links ,footer_content
     footer_links = document.getElementById("footer_links")
 
     footer_links.innerHTML = footer_content
+
+let page_title,page_name 
+
+    page_title = document.title
+
+    page_name = document.getElementById("page_name")
+
+    page_name.innerHTML = page_title
