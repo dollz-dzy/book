@@ -219,6 +219,7 @@ body.scrolled .sticky-header
     color: var(--color-gray);
     padding: 0 20px;
     text-align: center;
+    letter-spacing: 2px;
 }
 
 .main 
@@ -384,6 +385,26 @@ body.scrolled .sticky-header
     border-top-right-radius: var(--br);
 }
 
+.chapter-nr
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    color: var(--color-gray);
+    padding: 40px 0;
+}
+
+.i::first-letter
+{
+    text-transform: uppercase; 
+    font-size: 500%;
+    font-weight: bold;
+    float: left;
+    margin-right: 20px;
+}
 
 .chapter-con:last-child 
 {
@@ -404,6 +425,7 @@ body.scrolled .sticky-header
     border-radius:0;
     padding: 30px 20px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .book-description
@@ -545,11 +567,11 @@ p
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-weight: bold;
     border: 1px solid var(--color-gray);
     background-color: var(--color-whitesmoke);
     color: var(--color-gray);
     border-radius: var(--br);
+    letter-spacing: 4px;    
 }
 
 .sec-w-one, .sec-w-two 
@@ -561,10 +583,88 @@ p
 {
     grid-column: span 2; 
     height: 50px;   
-    letter-spacing: 4px;    
 }
 
-@media screen and (max-width: 600px) {
+
+.table 
+{
+    width: 50%;
+    height: auto;
+    border: 1px solid var(--color-gray);
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+    border-radius: var(--br);
+}
+
+.table-row:first-child
+{
+    background-color: var(--color-whitesmoke);
+    border-top-left-radius: var(--br);
+    border-top-right-radius: var(--br);
+}
+
+.table-row:last-child
+{
+    border-bottom: 0;
+}
+
+.table-row 
+{
+    width: 100%;
+    min-height: 50px;
+    height: auto;
+    border-bottom: 1px solid var(--color-gray);
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+.table-item:first-child
+{
+    border-left: 0;
+}
+
+.table-item:last-child
+{
+    width: 40%;
+}
+
+.table-item:only-child
+{
+    width: 100%;
+}
+
+.table-item 
+{
+    width: 100%;
+    min-height: 50px;
+    height: auto;
+    padding: 20px;
+    color: var(--color-gray);
+    display: flex;
+    align-items: center; 
+    border-left: 1px solid var(--color-gray);
+}
+
+.table-item a
+{
+    color: var(--color-link-blue);
+    text-decoration: none;
+}
+
+.table-item a:hover 
+{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) 
+{
+
+    .table 
+    {
+        width: 100%;
+    }
     
     .section-wiki 
     {
@@ -597,11 +697,6 @@ p
     }
 
     .chapters-shelf
-    {
-        width: 100%;
-    }
-
-    #page_name
     {
         width: 100%;
     }
